@@ -1,5 +1,6 @@
-import java.util.ArrayList;
 package pack;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Serveur
 {
@@ -22,10 +23,12 @@ public class Serveur
     
     public void diffuser(String message)
     {
+       Client tmp;
        
-        while(cl!=null) {
-            cl.recevoir(message);
-            cl.next();
+       Iterator lste= cl.iterator();
+        while(lste.hasNext()) {
+            tmp=(Client) lste.next();
+            tmp.recevoir(message);
         }
     }
 }
