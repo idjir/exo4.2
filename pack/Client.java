@@ -30,6 +30,7 @@ public class Client
     
     public String recevoir(String message)
     {
+        System.out.println("message reçu");
         return message;
     }
 }
